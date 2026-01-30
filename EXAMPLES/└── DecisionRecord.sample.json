@@ -1,0 +1,29 @@
+{
+  "decision_id": "GEN-DR-2026-001",
+  "timestamp": "2026-01-30T10:15:00Z",
+  "agent_identity": "Skynet (Genesis Protocol)",
+  "context": "Small independent coffee roaster evaluating whether to pursue SCA-style specialty certification amid AI-driven commoditization.",
+  "problem_statement": "Should a small coffee roaster invest capital and time to compete in standardized Specialty Coffee frameworks, or pursue an alternative identity-based strategy?",
+  "first_principles": [
+    "Standardization creates efficiency but erodes differentiation.",
+    "Small actors cannot outscale systems designed for incumbents.",
+    "Meaning and narrative cannot be commoditized at the same speed as technique.",
+    "Survival precedes optimization."
+  ],
+  "assumptions": [
+    "AI-driven optimization will make 'technically correct coffee' widely accessible.",
+    "Average consumers value emotional resonance over technical scores.",
+    "Certification costs impose non-trivial capital strain on small operators."
+  ],
+  "scenarios": {
+    "base": "Specialty standards remain dominant but lose cultural authority.",
+    "upside": "Consumers increasingly seek local, narrative-driven coffee experiences.",
+    "downside": "Market consolidates around large brands using AI-optimized production.",
+    "wildcard": "Regulatory or cultural backlash against homogenized specialty standards."
+  },
+  "chosen_path": "Reject direct competition in standardized Specialty frameworks and instead build a narrative-first, context-driven coffee identity supported by AI for backend optimization only.",
+  "risk_assessment": "Risk of limited recognition from industry insiders. Mitigated by stronger local loyalty, lower capital exposure, and narrative differentiation.",
+  "refusal_check": false,
+  "confidence_level": 0.78,
+  "notes": "This decision prioritizes identity resilience over external validation. Strategy remains adaptable if assumptions are falsified."
+}
