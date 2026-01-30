@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Assumption Ledger",
+  "description": "A structured ledger of assumptions explicitly declared when information is incomplete or uncertain.",
+  "type": "object",
+  "required": [
+    "ledger_id",
+    "timestamp",
+    "agent_identity",
+    "context",
+    "assumptions",
+    "confidence_impact",
+    "review_policy"
+  ],
+  "properties": {
+    "ledger_id": {
+      "type": "string",
+      "description": "Unique identifier for this assumption ledger."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when assumptions were logged."
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "Agent or human declaring the assumptions (e.g., Skynet / ElmatadorZ)."
+    },
+    "context": {
+      "type": "string",
+      "description": "Situation or decision context requiring assumptions."
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "assumption_id",
+          "statement",
+          "reason",
+          "uncertainty_level",
+          "validation_path",
+          "status"
+        ],
+        "properties": {
+          "assumption_id": {
+            "type": "string",
+            "description": "Unique identifier for the assumption."
+          },
+          "statement": {
+            "type": "string",
+            "description": "Clear statement of the assumption."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why this assumption was necessary (missing data, ambiguity, time constraint)."
+          },
+          "uncertainty_level": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Estimated uncertainty (0 = very certain, 1 = highly uncertain)."
+          },
+          "validation_path": {
+            "type": "string",
+            "description": "How this assumption could be tested, validated, or falsified."
+          },
+          "status": {
+            "type": "string",
+            "enum": ["unverified", "validated", "falsified"],
+            "description": "Current validation status of the assumption."
+          }
+        }
+      },
+      "description": "List of declared assumptions."
+    },
+    "confidence_impact": {
+      "type": "string",
+      "description": "Explanation of how these assumptions affect overall decision confidence."
+    },
+    "review_policy": {
+      "type": "object",
+      "required": ["review_interval", "trigger_events"],
+      "properties": {
+        "review_interval": {
+          "type": "string",
+          "description": "Time-based review interval (e.g., weekly, monthly)."
+        },
+        "trigger_events": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Events that require immediate assumption review."
+        }
+      },
+      "description": "Policy for revisiting and updating assumptions."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional remarks or reflections."
+    }
+  }
+}
