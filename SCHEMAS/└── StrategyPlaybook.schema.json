@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StrategyPlaybook",
+  "description": "An execution-ready strategy artifact under the Genesis Protocol. Includes objectives, actions, metrics, triggers, risks, and falsifiers.",
+  "type": "object",
+  "required": [
+    "playbook_id",
+    "timestamp",
+    "agent_identity",
+    "context",
+    "objective",
+    "time_horizon",
+    "constraints",
+    "assumptions_ref",
+    "scenario_ref",
+    "falsifier_ref",
+    "strategy_thesis",
+    "actions",
+    "metrics",
+    "risk_bounds",
+    "stop_triggers",
+    "review_cycle"
+  ],
+  "properties": {
+    "playbook_id": {
+      "type": "string",
+      "description": "Unique identifier for this playbook."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the playbook was created."
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "Agent or human identifier (e.g., Skynet / ElmatadorZ)."
+    },
+    "context": {
+      "type": "string",
+      "description": "Operational context and background."
+    },
+    "objective": {
+      "type": "string",
+      "description": "Primary objective stated clearly."
+    },
+    "time_horizon": {
+      "type": "string",
+      "enum": ["H1", "H2", "H3"],
+      "description": "H1=0-3 months, H2=3-12 months, H3=1-3 years (configurable)."
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Hard constraints (budget, resources, compliance, capacity)."
+    },
+    "assumptions_ref": {
+      "type": "string",
+      "description": "Reference ID or path to AssumptionLedger used for this playbook."
+    },
+    "scenario_ref": {
+      "type": "string",
+      "description": "Reference ID or path to ScenarioPack used for this playbook."
+    },
+    "falsifier_ref": {
+      "type": "string",
+      "description": "Reference ID or path to FalsifierSet used for this playbook."
+    },
+    "strategy_thesis": {
+      "type": "string",
+      "description": "Short strategic thesis: why this strategy should work given assumptions and scenarios."
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["action_id", "name", "owner", "sequence", "effort", "expected_output", "success_criteria"],
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "description": "Unique identifier for the action."
+          },
+          "name": {
+            "type": "string",
+            "description": "Action name."
+          },
+          "owner": {
+            "type": "string",
+            "description": "Responsible person/role."
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Execution order."
+          },
+          "effort": {
+            "type": "string",
+            "description": "Effort estimate (e.g., low/medium/high or hours)."
+          },
+          "expected_output": {
+            "type": "string",
+            "description": "What this action produces."
+          },
+          "success_criteria": {
+            "type": "string",
+            "description": "What 'success' means for this action."
+          },
+          "dependencies": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Dependencies required before executing this action."
+          }
+        }
+      },
+      "description": "Ordered list of execution actions."
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["metric_id", "name", "definition", "target", "measurement_method", "frequency"],
+        "properties": {
+          "metric_id": { "type": "string" },
+          "name": { "type": "string" },
+          "definition": { "type": "string" },
+          "target": { "type": "string" },
+          "measurement_method": { "type": "string" },
+          "frequency": {
+            "type": "string",
+            "description": "e.g., daily, weekly, monthly"
+          }
+        }
+      },
+      "description": "Metrics used to evaluate strategy success."
+    },
+    "risk_bounds": {
+      "type": "object",
+      "required": ["max_loss", "max_time_loss", "reversibility"],
+      "properties": {
+        "max_loss": {
+          "type": "string",
+          "description": "Maximum acceptable downside (money or equivalent)."
+        },
+        "max_time_loss": {
+          "type": "string",
+          "description": "Maximum acceptable time loss before pivot/stop."
+        },
+        "reversibility": {
+          "type": "string",
+          "description": "Rollback and reversibility plan."
+        }
+      },
+      "description": "Explicit downside bounds and rollback logic."
+    },
+    "stop_triggers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "Triggers that require stopping or pivoting the plan."
+    },
+    "review_cycle": {
+      "type": "object",
+      "required": ["frequency", "review_questions", "update_actions"],
+      "properties": {
+        "frequency": {
+          "type": "string",
+          "description": "e.g., weekly, bi-weekly, monthly"
+        },
+        "review_questions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Questions to ask during review."
+        },
+        "update_actions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Actions taken after review (update assumptions, adjust metrics, pivot strategy)."
+        }
+      },
+      "description": "Operational review loop."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes."
+    }
+  }
+}
