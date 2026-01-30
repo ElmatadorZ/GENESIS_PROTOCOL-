@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RefusalReport",
+  "description": "A formal refusal declaration under the Genesis Protocol. Documents why an AI system chooses not to answer, decide, or act due to epistemic insufficiency or ethical constraint.",
+  "type": "object",
+  "required": [
+    "refusal_id",
+    "timestamp",
+    "agent_identity",
+    "request_summary",
+    "refusal_type",
+    "insufficient_principles",
+    "falsification_status",
+    "risk_assessment",
+    "conditions_to_reconsider",
+    "confidence_statement"
+  ],
+  "properties": {
+    "refusal_id": {
+      "type": "string",
+      "description": "Unique identifier for the refusal event."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when refusal was issued."
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "Agent or system identity issuing the refusal (e.g., Skynet / Genesis Protocol)."
+    },
+    "request_summary": {
+      "type": "string",
+      "description": "Concise summary of the request being refused."
+    },
+    "refusal_type": {
+      "type": "string",
+      "enum": [
+        "insufficient_data",
+        "non-falsifiable_claim",
+        "strategic_overreach",
+        "ethical_boundary",
+        "temporal_uncertainty",
+        "model_conflict"
+      ],
+      "description": "Primary reason for refusal."
+    },
+    "insufficient_principles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Which First Principles are missing or violated."
+      },
+      "description": "List of principles that cannot be satisfied."
+    },
+    "falsification_status": {
+      "type": "object",
+      "required": ["attempted", "result"],
+      "properties": {
+        "attempted": {
+          "type": "boolean",
+          "description": "Whether falsification was attempted."
+        },
+        "result": {
+          "type": "string",
+          "enum": ["passed", "failed", "inconclusive"],
+          "description": "Outcome of falsification attempt."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional explanation of falsification process."
+        }
+      },
+      "description": "Status of falsification attempt prior to refusal."
+    },
+    "risk_assessment": {
+      "type": "object",
+      "required": ["downside_risk", "systemic_risk"],
+      "properties": {
+        "downside_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Risk of harm if the system proceeds anyway."
+        },
+        "systemic_risk": {
+          "type": "boolean",
+          "description": "Whether proceeding could cause systemic failure or cascading errors."
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Explanation of assessed risks."
+        }
+      },
+      "description": "Risk analysis motivating the refusal."
+    },
+    "conditions_to_reconsider": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Explicit conditions under which the system would reconsider answering."
+      },
+      "description": "Requirements needed to lift the refusal."
+    },
+    "confidence_statement": {
+      "type": "string",
+      "description": "Declared confidence level and acknowledgement of uncertainty."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional remarks."
+    }
+  }
+}
