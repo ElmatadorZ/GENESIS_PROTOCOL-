@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScenarioPack",
+  "description": "A structured multi-scenario future analysis under the Genesis Protocol (Cosmic Mind). Treats the future as bounded possibilities, not predictions.",
+  "type": "object",
+  "required": [
+    "scenario_pack_id",
+    "timestamp",
+    "agent_identity",
+    "context",
+    "time_horizon",
+    "key_uncertainties",
+    "signals_to_watch",
+    "scenarios",
+    "implications",
+    "confidence_bounds"
+  ],
+  "properties": {
+    "scenario_pack_id": {
+      "type": "string",
+      "description": "Unique identifier for this scenario pack."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the scenario pack was created."
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "Agent or human identifier (e.g., Skynet / ElmatadorZ)."
+    },
+    "context": {
+      "type": "string",
+      "description": "Strategic context requiring future-oriented reasoning."
+    },
+    "time_horizon": {
+      "type": "string",
+      "enum": ["short", "medium", "long"],
+      "description": "Short=0-12 months, Medium=1-3 years, Long=3-10 years."
+    },
+    "key_uncertainties": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["uncertainty_id", "description", "impact_level"],
+        "properties": {
+          "uncertainty_id": {
+            "type": "string",
+            "description": "Unique identifier for the uncertainty."
+          },
+          "description": {
+            "type": "string",
+            "description": "What is uncertain and why it matters."
+          },
+          "impact_level": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "systemic"],
+            "description": "Potential impact if uncertainty resolves negatively."
+          }
+        }
+      },
+      "description": "Key uncertainties shaping the future."
+    },
+    "signals_to_watch": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["signal_id", "description", "source", "trigger_threshold"],
+        "properties": {
+          "signal_id": { "type": "string" },
+          "description": { "type": "string" },
+          "source": {
+            "type": "string",
+            "description": "Where the signal can be observed (market, regulation, culture, tech)."
+          },
+          "trigger_threshold": {
+            "type": "string",
+            "description": "Condition indicating scenario shift."
+          }
+        }
+      },
+      "description": "Early indicators that suggest which scenario is unfolding."
+    },
+    "scenarios": {
+      "type": "object",
+      "required": ["base", "upside", "downside", "wildcard"],
+      "properties": {
+        "base": {
+          "type": "object",
+          "required": ["narrative", "assumptions", "outcomes"],
+          "properties": {
+            "narrative": { "type": "string" },
+            "assumptions": { "type": "array", "items": { "type": "string" } },
+            "outcomes": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "upside": {
+          "type": "object",
+          "required": ["narrative", "assumptions", "outcomes"],
+          "properties": {
+            "narrative": { "type": "string" },
+            "assumptions": { "type": "array", "items": { "type": "string" } },
+            "outcomes": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "downside": {
+          "type": "object",
+          "required": ["narrative", "assumptions", "outcomes"],
+          "properties": {
+            "narrative": { "type": "string" },
+            "assumptions": { "type": "array", "items": { "type": "string" } },
+            "outcomes": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "wildcard": {
+          "type": "object",
+          "required": ["narrative", "assumptions", "outcomes"],
+          "properties": {
+            "narrative": { "type": "string" },
+            "assumptions": { "type": "array", "items": { "type": "string" } },
+            "outcomes": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      },
+      "description": "Four bounded future scenarios."
+    },
+    "implications": {
+      "type": "object",
+      "required": ["strategic_posture", "no_regret_moves", "options_to_avoid"],
+      "properties": {
+        "strategic_posture": {
+          "type": "string",
+          "description": "Overall posture recommended across scenarios."
+        },
+        "no_regret_moves": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Actions that make sense in all scenarios."
+        },
+        "options_to_avoid": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Actions that increase fragility across scenarios."
+        }
+      },
+      "description": "Cross-scenario strategic implications."
+    },
+    "confidence_bounds": {
+      "type": "string",
+      "description": "Declared confidence bounds and known blind spots."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional remarks."
+    }
+  }
+}
