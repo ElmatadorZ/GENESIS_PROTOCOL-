@@ -76,3 +76,15 @@ It is designed to become a global reference for:
 
 ## License
 See `LICENSE.md`.
+ai
+artificial-intelligence
+ai-agents
+decision-making
+cognitive-architecture
+falsification
+ai-safety
+ai-governance
+strategy
+foresight
+systems-thinking
+first-principles
