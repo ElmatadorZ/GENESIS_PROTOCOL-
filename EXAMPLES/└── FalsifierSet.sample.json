@@ -1,0 +1,47 @@
+{
+  "falsifier_set_id": "GEN-FS-2026-001",
+  "timestamp": "2026-01-30T10:25:00Z",
+  "agent_identity": "Skynet (Genesis Protocol)",
+  "claim_or_strategy": "Narrative-first identity strategy will outperform competing in standardized specialty authority for a small roaster over 90 days.",
+  "falsifiers": [
+    {
+      "falsifier_id": "F1",
+      "test_statement": "Narrative-first content does not improve retention or repeat purchase behavior.",
+      "how_to_test": "Run 6-week content cadence + track repeat rate cohort vs prior baseline.",
+      "data_needed": ["weekly repeat customer rate", "POS customer identifiers or proxy", "content posting log"],
+      "pass_condition": "Repeat rate increases >= 10% vs baseline within 6-8 weeks.",
+      "fail_condition": "Repeat rate is flat or decreases over 8 weeks despite consistent cadence.",
+      "severity": "high"
+    },
+    {
+      "falsifier_id": "F2",
+      "test_statement": "Customers primarily choose based on price and convenience, making identity irrelevant in this location.",
+      "how_to_test": "Survey + observe: correlate purchase decisions with promos vs story-led launches.",
+      "data_needed": ["simple survey responses", "promo periods", "non-promo periods", "sales by SKU"],
+      "pass_condition": "Story-led launches maintain sales without discounts and increase high-margin items.",
+      "fail_condition": "Only discounts drive sales; story-led launches underperform consistently.",
+      "severity": "high"
+    },
+    {
+      "falsifier_id": "F3",
+      "test_statement": "Operational capacity cannot sustain narrative strategy without harming quality or speed.",
+      "how_to_test": "Measure service time and QC errors during content cadence weeks.",
+      "data_needed": ["avg service time", "complaint rate", "QC reject notes"],
+      "pass_condition": "Service time and complaints remain within acceptable bounds.",
+      "fail_condition": "Service time or complaints exceed bounds for 3+ weeks.",
+      "severity": "fatal"
+    }
+  ],
+  "boundary_conditions": [
+    "Foot traffic is near zero and cannot be influenced by content (structural location issue).",
+    "No minimal tracking exists (cannot measure outcomes).",
+    "Team capacity is already at burnout threshold."
+  ],
+  "stop_triggers": [
+    "Complaints spike > 2x baseline for 2 consecutive weeks",
+    "Cash runway falls below 8 weeks",
+    "Operational errors become repetitive and unresolved"
+  ],
+  "confidence_impact": "Confidence is conditional. If F1 or F2 fails, pivot toward pricing/offer optimization or distribution channels. If F3 triggers, reduce cadence and simplify operations first.",
+  "notes": "Genesis demands falsifiers before commitment."
+}
