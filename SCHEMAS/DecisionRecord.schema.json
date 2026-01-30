@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Genesis Decision Record",
+  "description": "A structured record of an AI or human-AI decision following the Genesis Protocol.",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "timestamp",
+    "agent_identity",
+    "context",
+    "problem_statement",
+    "first_principles",
+    "assumptions",
+    "scenarios",
+    "chosen_path",
+    "risk_assessment",
+    "refusal_check",
+    "confidence_level"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "description": "Unique identifier for this decision record."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the decision was made."
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "Agent or human identifier (e.g. Skynet / ElmatadorZ)."
+    },
+    "context": {
+      "type": "string",
+      "description": "Environmental, social, economic, or system context."
+    },
+    "problem_statement": {
+      "type": "string",
+      "description": "The exact question or problem being addressed."
+    },
+    "first_principles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "First principles used to reason about the problem."
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Explicit assumptions made due to uncertainty."
+    },
+    "scenarios": {
+      "type": "object",
+      "required": ["base", "upside", "downside", "wildcard"],
+      "properties": {
+        "base": { "type": "string" },
+        "upside": { "type": "string" },
+        "downside": { "type": "string" },
+        "wildcard": { "type": "string" }
+      },
+      "description": "Scenario analysis across possible futures."
+    },
+    "chosen_path": {
+      "type": "string",
+      "description": "The selected course of action."
+    },
+    "risk_assessment": {
+      "type": "string",
+      "description": "Downside risks, failure modes, and mitigation logic."
+    },
+    "refusal_check": {
+      "type": "boolean",
+      "description": "Whether any failure case triggered a refusal condition."
+    },
+    "confidence_level": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Declared confidence level (0–1) to avoid false certainty."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional reflective or post-decision notes."
+    }
+  }
+}
