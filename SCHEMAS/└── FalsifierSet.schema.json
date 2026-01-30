@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FalsifierSet",
+  "description": "A structured set of falsifiers and boundary conditions used to pressure-test claims and strategies under the Genesis Protocol.",
+  "type": "object",
+  "required": [
+    "falsifier_set_id",
+    "timestamp",
+    "agent_identity",
+    "claim_or_strategy",
+    "falsifiers",
+    "boundary_conditions",
+    "stop_triggers",
+    "confidence_impact"
+  ],
+  "properties": {
+    "falsifier_set_id": {
+      "type": "string",
+      "description": "Unique identifier for this falsifier set."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when falsifiers were generated."
+    },
+    "agent_identity": {
+      "type": "string",
+      "description": "Agent or human identifier (e.g., Skynet / ElmatadorZ)."
+    },
+    "claim_or_strategy": {
+      "type": "string",
+      "description": "The claim, recommendation, or strategy being pressure-tested."
+    },
+    "falsifiers": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "falsifier_id",
+          "test_statement",
+          "how_to_test",
+          "data_needed",
+          "pass_condition",
+          "fail_condition",
+          "severity"
+        ],
+        "properties": {
+          "falsifier_id": {
+            "type": "string",
+            "description": "Unique identifier for the falsifier."
+          },
+          "test_statement": {
+            "type": "string",
+            "description": "A concrete statement that, if proven true, invalidates the claim/strategy."
+          },
+          "how_to_test": {
+            "type": "string",
+            "description": "Practical method to test this falsifier."
+          },
+          "data_needed": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Data required to execute the test."
+          },
+          "pass_condition": {
+            "type": "string",
+            "description": "Condition under which the falsifier does NOT invalidate the claim."
+          },
+          "fail_condition": {
+            "type": "string",
+            "description": "Condition under which the falsifier invalidates the claim."
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "fatal"],
+            "description": "Severity of failure if this falsifier triggers."
+          }
+        }
+      },
+      "description": "List of falsifiers."
+    },
+    "boundary_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "Conditions under which the claim/strategy is not expected to work."
+    },
+    "stop_triggers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "Triggers that require stopping execution or revisiting the strategy."
+    },
+    "confidence_impact": {
+      "type": "string",
+      "description": "Explanation of how falsifiers and boundaries affect confidence."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional remarks."
+    }
+  }
+}
