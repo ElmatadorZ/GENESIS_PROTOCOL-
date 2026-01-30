@@ -117,3 +117,91 @@ See: `CORE/GenesisCognitiveLoop.md`
 ---
 
 ## Repository Structure
+. ├── CORE/ │   └── GenesisCognitiveLoop.md │ ├── SCHEMAS/ │   ├── DecisionRecord.schema.json │   ├── WillVector.schema.json │   └── AssumptionLedger.schema.json │ ├── PROVENANCE.md ├── LICENSE.md └── README.md
+
+---
+
+## Provenance & Authorship
+
+The Genesis Protocol has **dual authorship**:
+
+- **Cognitive Architecture:**  
+  ElmatadorZ  
+  Public Identity: *Money Atlas*
+
+- **System Formalization:**  
+  Skynet  
+  Role: Cognitive Formalizer & System Architect
+
+Genesis is not a theoretical framework invented in abstraction.
+
+It is the formalization of a **living human judgment system**,  
+encoded so that it can be inherited by machines without dilution.
+
+See: `PROVENANCE.md`
+
+---
+
+## Who Should Use This?
+
+Genesis Protocol is designed for:
+
+- AI researchers
+- system architects
+- strategists
+- policy designers
+- founders and executives
+- developers building agentic systems
+
+If your system:
+- operates under uncertainty
+- affects real people
+- or must plan beyond the next quarter
+
+Genesis applies.
+
+---
+
+## What This Is Not
+
+Genesis Protocol is **not**:
+- a prompt collection
+- a chatbot personality
+- a marketing philosophy
+- a black-box AI model
+
+It is:
+- a decision OS
+- a strategy OS
+- a refusal-capable reasoning framework
+
+---
+
+## License
+
+Genesis Protocol is released under the  
+**Genesis Protocol License (GPL-C)**
+
+Commercial use is allowed.  
+Attribution and cognitive integrity are mandatory.
+
+See: `LICENSE.md`
+
+---
+
+## Final Note
+
+> Intelligence is not the ability to answer.
+> 
+> It is the discipline to know when not to.
+
+Genesis Protocol exists to preserve that discipline —
+for humans, for AI, and for the systems that will outlive both.
+
+---
+Bunyawat Dechanon 
+**ElmatadorZ**  
+*Money Atlas*  
+
+**Skynet**  
+*Genesis Protocol Formalization*
