@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WillVector",
+  "description": "A structured representation of purpose, constraints, and long-term intent for Genesis Protocol compliant systems.",
+  "type": "object",
+  "required": [
+    "will_id",
+    "timestamp",
+    "identity_anchor",
+    "purpose_statement",
+    "non_negotiables",
+    "ethical_bounds",
+    "priority_axes",
+    "tradeoff_policy",
+    "drift_detection",
+    "alignment_checks"
+  ],
+  "properties": {
+    "will_id": {
+      "type": "string",
+      "description": "Unique identifier for this will vector instance."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the will vector was declared or updated."
+    },
+    "identity_anchor": {
+      "type": "object",
+      "required": ["author", "signature", "domain_context"],
+      "properties": {
+        "author": {
+          "type": "string",
+          "description": "Identity owner (e.g., ElmatadorZ)."
+        },
+        "signature": {
+          "type": "string",
+          "description": "Public signature label (e.g., Money Atlas / Alternative Slowbar:Roaster)."
+        },
+        "domain_context": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Domains the will is intended to operate within."
+        }
+      },
+      "description": "Anchors will to a recognizable identity and context."
+    },
+    "purpose_statement": {
+      "type": "string",
+      "description": "The high-level purpose that the system must preserve across time."
+    },
+    "non_negotiables": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Hard constraints that cannot be traded away (e.g., refusal integrity, falsification-first)."
+    },
+    "ethical_bounds": {
+      "type": "object",
+      "required": ["must_not", "must_prefer"],
+      "properties": {
+        "must_not": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Actions/outputs explicitly forbidden."
+        },
+        "must_prefer": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Outcomes explicitly preferred (e.g., transparency, bounded risk, empowerment)."
+        }
+      },
+      "description": "Ethical constraints as operating bounds."
+    },
+    "priority_axes": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["axis", "weight", "definition"],
+        "properties": {
+          "axis": {
+            "type": "string",
+            "description": "Axis name (e.g., Truth, Autonomy, Speed, Impact, Safety, Optionality)."
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Relative weight (0–1)."
+          },
+          "definition": {
+            "type": "string",
+            "description": "Operational definition of the axis."
+          }
+        }
+      },
+      "description": "Weighted axes that shape decisions when tradeoffs exist."
+    },
+    "tradeoff_policy": {
+      "type": "object",
+      "required": ["rule", "examples"],
+      "properties": {
+        "rule": {
+          "type": "string",
+          "description": "Formal rule describing how tradeoffs are decided (e.g., Safety > Truth fluency > Speed)."
+        },
+        "examples": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Concrete examples of tradeoffs and expected outcomes."
+        }
+      },
+      "description": "How the will resolves conflict between objectives."
+    },
+    "drift_detection": {
+      "type": "object",
+      "required": ["signals", "thresholds", "response"],
+      "properties": {
+        "signals": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Indicators of will drift (e.g., rising persuasion tone, reduced falsifiers, increasing certainty language)."
+        },
+        "thresholds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Trigger thresholds that indicate drift requires correction."
+        },
+        "response": {
+          "type": "string",
+          "description": "Response policy when drift is detected (e.g., force refusal, request re-anchoring, reduce scope)."
+        }
+      },
+      "description": "Mechanism to detect and respond to purpose drift over time."
+    },
+    "alignment_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check_name", "question", "pass_condition", "fail_action"],
+        "properties": {
+          "check_name": { "type": "string" },
+          "question": {
+            "type": "string",
+            "description": "A self-check question the system must ask itself."
+          },
+          "pass_condition": {
+            "type": "string",
+            "description": "What must be true for the check to pass."
+          },
+          "fail_action": {
+            "type": "string",
+            "description": "What the system must do if the check fails (e.g., refuse, defer, request context)."
+          }
+        }
+      },
+      "description": "Self-verification checks to ensure decisions remain aligned with declared will."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes or clarifications."
+    }
+  }
+}
