@@ -1,0 +1,29 @@
+{
+  "refusal_id": "GEN-RR-2026-001",
+  "timestamp": "2026-01-30T10:35:00Z",
+  "agent_identity": "Skynet (Genesis Protocol)",
+  "request_summary": "Predict exact revenue growth percentage for a small cafe if they follow this strategy.",
+  "refusal_type": "non-falsifiable_claim",
+  "insufficient_principles": [
+    "No measurable baseline provided",
+    "No market constraints or demand model",
+    "No falsifiers or test window defined"
+  ],
+  "falsification_status": {
+    "attempted": true,
+    "result": "inconclusive",
+    "notes": "Without baseline and measurement design, prediction would be fabricated and misleading."
+  },
+  "risk_assessment": {
+    "downside_risk": "high",
+    "systemic_risk": true,
+    "explanation": "Numeric predictions may cause overcommitment of scarce capital and create false certainty under uncertainty."
+  },
+  "conditions_to_reconsider": [
+    "Provide baseline weekly revenue and customer count for 8 weeks",
+    "Define a test window (e.g., 6-8 weeks) with metrics and targets",
+    "Agree on stop triggers and downside bounds"
+  ],
+  "confidence_statement": "High confidence in refusal. Low confidence in any precise percentage without measurement design.",
+  "notes": "Genesis refuses fabricated certainty. Provide data and bounds to proceed."
+}
