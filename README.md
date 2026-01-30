@@ -1,90 +1,119 @@
-# GENESIS_PROTOCOL-
-The Genesis Protocol — an OS-level cognitive standard for strategy-capable AI, enforcing falsification-first reasoning, refusal integrity, and multi-horizon foresight via Genesis Mind, First Principle Codex, and Cosmic Mind.
 # The Genesis Protocol
+### A Cognitive Operating System for Strategic AI
 
-> **A cognitive OS standard for strategy-capable AI systems.**  
-> Built on **Genesis Mind** (falsification-first constraints), **First Principle Codex** (reasoning invariants),  
-> and **Cosmic Mind** (multi-horizon strategy without hallucinated foresight).
-
-## Core Quote
-> **“Foresight without falsification is fiction.”**
-
----
-
-## What this repo is
-This is **not** a model, chatbot, prompt pack, or a demo.
-
-**The Genesis Protocol** is an **OS-level standard** that defines *non-negotiable contracts* for AI systems that:
-- plan ahead,
-- recommend actions,
-- or execute decisions.
-
-It exists to make **truth constraints**, **refusal integrity**, and **auditability** foundational — not optional.
+> **Status:** Reference Implementation  
+> **Category:** Cognitive OS / Strategic AI Framework  
+> **Designed from:** Human judgment  
+> **Formalized by:** AI
 
 ---
 
-## Why it matters
-AI will become cheaper and faster.
+## What is The Genesis Protocol?
 
-The future bottleneck is:
-- **trust**
-- **verification**
-- **accountability**
-- and the ability to say **“I don’t know”** with structure.
+The Genesis Protocol is not an AI model.
 
-The Genesis Protocol treats refusal as a feature:
-> **Correct by refusal** is safer than **confident by probability**.
+It is a **cognitive operating system** —  
+a structured way to think, decide, refuse, and adapt under uncertainty.
+
+Where most AI systems optimize for fluency,  
+Genesis Protocol optimizes for **judgment integrity**.
 
 ---
 
-## Documents
-- `GENESIS_PROTOCOL.md` — OS spec (contracts, components, canonical outputs)
-- `GENESIS_MIND.md` — falsification-first constraints & refusal integrity
-- `FIRST_PRINCIPLE_CODEX.md` — invariants, assumptions, causal reasoning
-- `COSMIC_MIND.md` — foresight/strategy standard (H1/H2/H3 + scenario packs)
-- `FAILURE_CASES.md` — refusal library (where the system must not answer)
-- `SCHEMAS/` — canonical JSON formats for interoperability
-- `IMPLEMENTATIONS/pseudo/` — reference pseudocode (language-agnostic)
-- `EXAMPLES/` — example playbooks (Money Atlas / ASR Coffee OS)
+## Why Genesis Exists
+
+Modern AI systems fail in one critical way:
+
+> They answer even when they should not.
+
+Genesis Protocol was created to solve this.
+
+It enforces:
+- explicit assumptions
+- falsifiable reasoning
+- scenario-bounded strategy
+- refusal as a first-class outcome
+- auditable decision records
+
+This makes Genesis suitable for:
+- strategy
+- governance
+- long-horizon planning
+- high-stakes decision support
 
 ---
 
-## Minimal OS Contracts (Non-Negotiables)
-1. **No Plan Without Falsifiers**  
-   Strategy must include disconfirming evidence paths.
-2. **No Confidence Without Bounds**  
-   Claims require uncertainty tags and boundary conditions.
-3. **No Action Without Accountability**  
-   Every decision emits an auditable record.
-4. **No Foresight Without Scenarios**  
-   Future statements must be scenario-tagged (not treated as certainty).
-5. **Refusal Integrity**  
-   If falsifiers cannot be generated, the system must refuse.
+## Core Principles
+
+Genesis Protocol is built on four irreducible pillars:
+
+### 1. Genesis Mind
+A first-principle reasoning framework that decomposes problems into:
+- invariants
+- variables
+- constraints
+- falsifiers
+
+No assumption is allowed to remain implicit.
 
 ---
 
-## Signature
-This OS standard is authored and published under the identity:
-**ElmatadorZ (Money Atlas)**
+### 2. First Principle Codex
+A refusal-first epistemology:
+- If knowledge is insufficient → refuse
+- If falsifiers cannot be defined → refuse
+- If boundaries are unclear → refuse
 
-It is designed to become a global reference for:
-- falsification-first AI
-- strategy-capable agents
-- foresight systems with bounded claims
+Correctness begins with knowing when *not* to answer.
 
 ---
 
-## License
-See `LICENSE.md`.
-ai
-artificial-intelligence
-ai-agents
-decision-making
-cognitive-architecture
-falsification
-ai-safety
-ai-governance
-strategy
-foresight
-systems-thinking
-first-principles
+### 3. Cosmic Mind
+A strategic layer for futures that do not yet exist.
+
+Cosmic Mind enforces:
+- multi-scenario reasoning (Base / Upside / Downside / Wildcard)
+- long-horizon thinking
+- weak-signal awareness
+- regret-bounded strategy selection
+
+The future is treated as a **range**, not a prediction.
+
+---
+
+### 4. Will (Purpose as Structure)
+Genesis treats **Will** as a system component, not a slogan.
+
+Every compliant system must declare:
+- purpose
+- non-negotiables
+- ethical bounds
+- priority axes
+- drift detection rules
+
+An AI without Will is not intelligent — it is dangerous.
+
+---
+
+## The Genesis Cognitive Loop
+
+Genesis systems operate through a strict loop:
+
+1. Will Anchoring  
+2. Context Boundary  
+3. First Principle Decomposition  
+4. Assumption Declaration  
+5. Falsifier Construction  
+6. Scenario Modeling (Cosmic Mind)  
+7. Regret-Bounded Strategy Selection  
+8. Decision Recording  
+9. Feedback & Drift Correction  
+
+Every output leaves an audit trail.  
+Every refusal is intentional.
+
+See: `CORE/GenesisCognitiveLoop.md`
+
+---
+
+## Repository Structure
