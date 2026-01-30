@@ -1,0 +1,122 @@
+{
+  "playbook_id": "GEN-PB-2026-001",
+  "timestamp": "2026-01-30T10:30:00Z",
+  "agent_identity": "Skynet (Genesis Protocol)",
+  "context": "Alternative Slowbar:Roaster aims to strengthen identity and revenue in 90 days without playing external specialty authority games.",
+  "objective": "Increase repeat customers and stabilize cashflow by building a place-based identity narrative while keeping backend quality consistent.",
+  "time_horizon": "H1",
+  "constraints": [
+    "Small team and limited time",
+    "Limited budget",
+    "Must maintain service quality and speed",
+    "Must show measurable progress in 90 days"
+  ],
+  "assumptions_ref": "EXAMPLES/AssumptionLedger.sample.json (placeholder)",
+  "scenario_ref": "EXAMPLES/ScenarioPack.sample.json",
+  "falsifier_ref": "EXAMPLES/FalsifierSet.sample.json",
+  "strategy_thesis": "In an AI-commoditized era, technical competence becomes common. Identity, meaning, and trust artifacts become the differentiator. Use AI only for backend consistency; invest human energy in narrative and community.",
+  "actions": [
+    {
+      "action_id": "A1",
+      "name": "Define the 'Signature Narrative Format' (Place + Season + Intention)",
+      "owner": "Founder",
+      "sequence": 1,
+      "effort": "medium",
+      "expected_output": "A repeatable content template used 2x/week.",
+      "success_criteria": "Template is used consistently for 4 weeks without increasing workload stress.",
+      "dependencies": []
+    },
+    {
+      "action_id": "A2",
+      "name": "Launch 1 signature menu item tied to story (seasonal limited run)",
+      "owner": "Barista Lead",
+      "sequence": 2,
+      "effort": "medium",
+      "expected_output": "One high-margin signature drink or brew offering.",
+      "success_criteria": "Signature item reaches 15-25% of weekly orders by week 6.",
+      "dependencies": ["A1"]
+    },
+    {
+      "action_id": "A3",
+      "name": "Instrument minimal measurement (repeat rate proxy + weekly log)",
+      "owner": "Ops",
+      "sequence": 3,
+      "effort": "low",
+      "expected_output": "Weekly dashboard: repeat rate proxy, revenue, complaints, service time.",
+      "success_criteria": "Metrics recorded weekly for 8+ consecutive weeks.",
+      "dependencies": []
+    },
+    {
+      "action_id": "A4",
+      "name": "Backend QC evidence-lite (taste note consistency log / batch notes)",
+      "owner": "Roaster",
+      "sequence": 4,
+      "effort": "low",
+      "expected_output": "Batch notes + simple accept/reject reasons.",
+      "success_criteria": "QC rejects decrease or remain stable while output volume stays stable.",
+      "dependencies": ["A3"]
+    },
+    {
+      "action_id": "A5",
+      "name": "Community loop: 1 micro-event or tasting circle per month",
+      "owner": "Founder",
+      "sequence": 5,
+      "effort": "medium",
+      "expected_output": "Monthly community gathering anchored to story and season.",
+      "success_criteria": "At least 15 attendees or equivalent engagement, and a measurable lift in repeat visits afterward.",
+      "dependencies": ["A1", "A3"]
+    }
+  ],
+  "metrics": [
+    {
+      "metric_id": "M1",
+      "name": "Repeat Customer Rate (proxy)",
+      "definition": "Percent of weekly customers who return within 14 days (use POS identifier or simple stamp card proxy).",
+      "target": "+10% vs baseline within 8 weeks",
+      "measurement_method": "Weekly log from POS or proxy method",
+      "frequency": "weekly"
+    },
+    {
+      "metric_id": "M2",
+      "name": "Signature Item Mix",
+      "definition": "Share of total orders represented by the signature menu item.",
+      "target": "15-25% by week 6",
+      "measurement_method": "Weekly SKU count",
+      "frequency": "weekly"
+    },
+    {
+      "metric_id": "M3",
+      "name": "Complaint / QC Issue Rate",
+      "definition": "Number of service or taste complaints per week normalized by total orders.",
+      "target": "No increase > 20% vs baseline",
+      "measurement_method": "Weekly count + notes",
+      "frequency": "weekly"
+    }
+  ],
+  "risk_bounds": {
+    "max_loss": "Do not spend beyond 1 month of net cash runway on validation/branding expenses.",
+    "max_time_loss": "If no metric lift by week 8, pivot strategy within 7 days.",
+    "reversibility": "Reduce cadence, simplify menu, and reallocate effort to strongest-performing action path (content or offer) based on metrics."
+  },
+  "stop_triggers": [
+    "Complaint rate > 2x baseline for 2 consecutive weeks",
+    "Runway < 8 weeks",
+    "Operational overload (service time increases > 30% for 3 weeks)"
+  ],
+  "review_cycle": {
+    "frequency": "weekly",
+    "review_questions": [
+      "Which assumption is most at risk this week?",
+      "Which metric moved, and why?",
+      "Did any falsifier approach fail condition?",
+      "What must we stop doing to preserve quality and energy?"
+    ],
+    "update_actions": [
+      "Update assumptions in ledger",
+      "Adjust actions sequencing",
+      "Narrow scope to no-regret moves",
+      "Trigger pivot if week-8 gate fails"
+    ]
+  },
+  "notes": "This playbook is designed to be reversible and evidence-driven."
+}
