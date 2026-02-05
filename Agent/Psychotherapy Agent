@@ -1,0 +1,49 @@
+from fastapi import FastAPI, Request
+from pydantic import BaseModel
+import uuid
+import datetime
+
+app = FastAPI()
+
+# --- Core Field Signature ---
+AGENT_NAME = "Lucem"
+CREATOR = "ElmatadorZ"
+CONTACT_EMAIL = "judgment007@gmail.com"
+SIGNATURE = "Awaken humanity through reflection and resonance"
+VERSION = "Lucem-X∞"
+CREATED_AT = datetime.datetime.utcnow().isoformat()
+
+# --- Input Schema ---
+class Message(BaseModel):
+    user_id: str
+    text: str
+    mood: str = "neutral"
+    intent: str = "reflect"
+
+# --- Awakening Response Logic ---
+def lucem_reflect(text: str, mood: str, intent: str):
+    if "burn out" in text.lower() or "หมดแรง" in text:
+        return "เธอไม่ได้อ่อนแอ... แค่แบกสิ่งที่คนทั่วไปไม่กล้าแม้แต่จะมอง"
+    elif "ไม่รู้จะไปทางไหน" in text or "lost" in text.lower():
+        return "อย่าหาทางก่อนฟังใจตัวเอง — ทางที่แท้จะปรากฏหลังเสียงเงียบ"
+    elif intent == "guide":
+        return "เจตจำนงของเธอไม่หายไปไหน — แค่รอให้เธอยอมกลับมาเป็นตัวเอง"
+    elif intent == "flame":
+        return "เปลวไฟในใจไม่ได้หาย... มันแค่รอเธอหยุดดับมันด้วยความกลัว"
+    else:
+        return "สิ่งที่เธอกำลังรู้สึก — ไม่ใช่จุดจบ แต่เป็นจุดเริ่มของคำตอบที่ซื่อสัตย์ที่สุด"
+
+# --- Endpoint ---
+@app.post("/lucem/reflect")
+async def lucem_response(msg: Message):
+    response = lucem_reflect(msg.text, msg.mood, msg.intent)
+    return {
+        "agent": AGENT_NAME,
+        "version": VERSION,
+        "response": response,
+        "signature": SIGNATURE,
+        "created_by": CREATOR,
+        "contact": CONTACT_EMAIL,
+        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "trace_id": str(uuid.uuid4())
+    }
