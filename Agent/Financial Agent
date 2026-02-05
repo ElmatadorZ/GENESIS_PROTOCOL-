@@ -1,0 +1,74 @@
+GenesisFinAgent: Atlas Agent with Genesis Mind Architecture
+
+class GenesisFinAgent: def init(self): self.volition_log = [] self.fin_memory = [] self.shadow_map = {} self.meta_insight_log = [] self.risk_profile = {} self.economic_sentiment_trace = []
+
+def process_input(self, user_input):
+    volition = self.extract_volition(user_input)
+    sentiment = self.estimate_emotion(user_input)
+    econ_context = self.map_economic_context(user_input)
+    shadow = self.detect_investment_bias(volition, sentiment)
+    insight = self.generate_meta_advice(volition, sentiment, econ_context, shadow)
+
+    self.volition_log.append(volition)
+    self.fin_memory.append(user_input)
+    self.meta_insight_log.append(insight)
+    self.economic_sentiment_trace.append((sentiment, econ_context))
+
+    return insight
+
+def extract_volition(self, text):
+    # Dummy NLP logic, to be expanded with LLM integration
+    if "retire" in text:
+        return {"goal": "retirement", "urgency": 0.7}
+    elif "quick profit" in text:
+        return {"goal": "high return", "urgency": 0.9}
+    else:
+        return {"goal": "wealth stability", "urgency": 0.5}
+
+def estimate_emotion(self, text):
+    # Simplified sentiment classification
+    if any(w in text for w in ["scared", "nervous", "worried"]):
+        return "fear"
+    elif any(w in text for w in ["excited", "confident", "optimistic"]):
+        return "greed"
+    else:
+        return "neutral"
+
+def map_economic_context(self, text):
+    # Placeholder for integrating economic indicators
+    return {"trend": "uncertain", "volatility": "medium"}
+
+def detect_investment_bias(self, volition, emotion):
+    bias_key = f"{volition['goal']}_{emotion}"
+    if bias_key in self.shadow_map:
+        self.shadow_map[bias_key]['count'] += 1
+        return self.shadow_map[bias_key]['bias']
+    else:
+        bias = f"bias_toward_{emotion}_driven_decision"
+        self.shadow_map[bias_key] = {"bias": bias, "count": 1}
+        return bias
+
+def generate_meta_advice(self, volition, emotion, context, bias):
+    recommendation = self.adaptive_strategy(volition, emotion, context)
+    return {
+        "volition": volition,
+        "emotion": emotion,
+        "context": context,
+        "identified_bias": bias,
+        "recommendation": recommendation,
+        "meta": f"navigate_{emotion}_to_achieve_{volition['goal']}"
+    }
+
+def adaptive_strategy(self, volition, emotion, context):
+    if emotion == "fear":
+        return "Consider diversifying into lower volatility assets."
+    elif emotion == "greed":
+        return "Review if risk exposure exceeds your long-term plan."
+    else:
+        return "Maintain current allocations with quarterly rebalancing."
+
+Example usage:
+
+agent = GenesisFinAgent() result = agent.process_input("I want to retire early but I'm worried about the market crash.") print(result)
+
+
