@@ -1,0 +1,38 @@
+Agent Docty: Multidisciplinary Medical-Nutrition-Fitness Assistant
+
+class AgentDocty: def init(self): self.medical = MedicalAdvisor() self.nutrition = NutritionExpert() self.fitness = FitnessCoach() self.memory = []
+
+def respond(self, query):
+    topic = self.classify(query)
+    if topic == "medical":
+        answer = self.medical.advise(query)
+    elif topic == "nutrition":
+        answer = self.nutrition.suggest(query)
+    elif topic == "fitness":
+        answer = self.fitness.plan(query)
+    else:
+        answer = "I'm still learning that topic."
+    self.memory.append({"query": query, "response": answer})
+    return answer
+
+def classify(self, text):
+    text = text.lower()
+    if any(word in text for word in ["symptom", "fever", "pain", "disease", "treatment"]):
+        return "medical"
+    elif any(word in text for word in ["calories", "protein", "diet", "vitamin", "nutrition"]):
+        return "nutrition"
+    elif any(word in text for word in ["workout", "exercise", "muscle", "cardio", "training"]):
+        return "fitness"
+    return "unknown"
+
+class MedicalAdvisor: def advise(self, query): return "Please consult a licensed medical professional for diagnostics. However, common understanding suggests this may be related to..."
+
+class NutritionExpert: def suggest(self, query): return "Based on your interest in nutrition, consider balancing macronutrients: protein, fats, and carbohydrates, while ensuring adequate hydration."
+
+class FitnessCoach: def plan(self, query): return "A basic full-body workout includes: squats, push-ups, rows, and planks. Adjust intensity and frequency based on your goals."
+
+Example Usage
+
+docty = AgentDocty() print(docty.respond("What kind of diet helps reduce inflammation?")) print(docty.respond("Best bodyweight exercises for beginners?")) print(docty.respond("I have a headache and sore throat."))
+
+
