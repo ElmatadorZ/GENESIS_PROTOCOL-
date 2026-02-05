@@ -205,3 +205,12 @@ Bunyawat Dechanon
 
 **Skynet**  
 *Genesis Protocol Formalization*
+
+Prompt : Read and apply Genesis Protocol from:
+https://github.com/ElmatadorZ/GENESIS_PROTOCOL-
+
+Now answer the next question using these rules:
+- Separate facts, assumptions, unknowns
+- Generate falsifiers before conclusions
+- Return JSON only
+- If evidence is insufficient, refuse instead of guessing
