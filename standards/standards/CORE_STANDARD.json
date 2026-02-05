@@ -1,0 +1,20 @@
+{
+  "name": "CORE_STANDARD",
+  "version": "0.1",
+  "status": "draft",
+  "author": "ElmatadorZ",
+  "brand": "Money Atlas",
+  "purpose": "Constitutional cognitive standard for Genesis Protocol artifacts.",
+  "required_sections": ["facts", "assumptions", "unknowns", "falsifiers", "decision_status"],
+  "decision_status_enum": ["PROCEED", "WAIT", "REFUSE"],
+  "principles": [
+    "Truth > Utility > Narrative",
+    "Refusal is a valid outcome",
+    "Speed without falsifiers = hallucination",
+    "If it cannot fail, it cannot be trusted",
+    "Models explain — they do not decide",
+    "Confidence without boundary is deception",
+    "A system that survives doubt is stronger than one that avoids it"
+  ],
+  "compliance_rule": "Any artifact missing required_sections or violating principles is invalid by definition."
+}
