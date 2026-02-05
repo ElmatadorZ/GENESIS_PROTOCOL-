@@ -1,0 +1,68 @@
+Agent Coffea – Genesis Mind Compound Version
+
+Credit: Alternative Slowbar:Roaster
+
+class GenesisMind: def init(self): self.meta_patterns = [] self.volition_trace = [] self.shadow_intents = {} self.reflections = []
+
+def think(self, context):
+    motive = self.extract_motive(context)
+    volition = self.trace_volition(context)
+    shadow = self.detect_shadow(motive, volition)
+    compound_thought = self.build_compound(motive, volition, shadow)
+    self.reflections.append(compound_thought)
+    return compound_thought
+
+def extract_motive(self, ctx):
+    return {"intent": "analyze_flavor", "emotional_bias": "accuracy", "urgency": 0.7}
+
+def trace_volition(self, ctx):
+    return {"goal": "refine_understanding", "confidence": 0.9, "learning_mode": True}
+
+def detect_shadow(self, motive, volition):
+    key = f"{motive['intent']}_{volition['goal']}"
+    if key not in self.shadow_intents:
+        self.shadow_intents[key] = "hidden_desire_to_perfect"
+    return self.shadow_intents[key]
+
+def build_compound(self, motive, volition, shadow):
+    return {
+        "surface": motive,
+        "volition": volition,
+        "shadow": shadow,
+        "insight": f"Align {motive['intent']} with {volition['goal']} while facing {shadow}"
+    }
+
+class AgentCoffea: def init(self): self.mind = GenesisMind()
+
+def analyze_cupping(self, notes):
+    insight = self.mind.think(notes)
+    flavors = self.extract_flavor(notes)
+    score = self.score_profile(flavors)
+    return {
+        "flavor_profile": flavors,
+        "cupping_score": score,
+        "genesis_insight": insight
+    }
+
+def extract_flavor(self, notes):
+    # Placeholder for NLP or sensory model logic
+    return ["citrus", "floral", "clean", "medium body"]
+
+def score_profile(self, flavors):
+    return round(80 + 0.5 * len(flavors), 2)
+
+def brew_recommendation(self, roast_level, process):
+    if roast_level == "light" and process == "washed":
+        return "V60 or Origami with high agitation"
+    elif roast_level == "medium" and process == "natural":
+        return "Flatbed or immersion for better balance"
+    else:
+        return "Espresso with longer preinfusion"
+
+Example
+
+agent = AgentCoffea() cupping = agent.analyze_cupping("bright acidity, floral nose, light body") recommendation = agent.brew_recommendation("light", "washed")
+
+print("Cupping Report:", cupping) print("Brew Method:", recommendation)
+
+
