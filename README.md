@@ -198,13 +198,47 @@ See: `LICENSE.md`
 Genesis Protocol exists to preserve that discipline —
 for humans, for AI, and for the systems that will outlive both.
 
----
+## Authorship & Philosophy
+
+Genesis Protocol is fully open-source.
+
+This project is created and maintained by an independent Thai builder.
+I do not come from a traditional software engineering background, and I actively use AI systems to assist in drafting code and documentation.
+
+**However, the architecture, system constraints, specifications, design principles, and roadmap decisions are authored, curated, and owned by a human architect.**
+
+In Genesis Protocol:
+- Humans define **first principles**
+- Humans design **system boundaries**
+- Humans decide **what must remain invariant**
+- AI assists with **implementation, iteration, and refinement**
+
+AI is treated as a tool — not as the source of intent.
+
+Genesis Protocol is therefore not a “code-first” project,  
+but a **spec-first, architecture-driven system**, where clarity of thought precedes implementation.
+
 Bunyawat Dechanon 
 **ElmatadorZ**  
-*Money Atlas*  
-
+*Money Atlas* 
 **Skynet**  
 *Genesis Protocol Formalization*
+
+## Open Source Intent
+
+All code in this repository is open-source and intended for:
+- Learning
+- Review
+- Extension
+- Critique
+
+Genesis Protocol is designed to be:
+- Readable by humans
+- Interpretable by AI systems
+- Forkable without permission
+- Auditable without trust
+
+If the system is useful, it should stand on its structure — not on authority.
 
 Prompt : Read and apply Genesis Protocol from:
 https://github.com/ElmatadorZ/GENESIS_PROTOCOL-/tree/main
